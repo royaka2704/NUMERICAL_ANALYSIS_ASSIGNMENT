@@ -16,7 +16,7 @@ program force
     vx = 1.0
     vy = 1.0
 
-    !F = 0
+
 
     do i=1, N
         vx = vx + a*dt
