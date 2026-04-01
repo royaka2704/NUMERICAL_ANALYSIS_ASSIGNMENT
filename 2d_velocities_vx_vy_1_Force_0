@@ -1,0 +1,38 @@
+program force
+    implicit none
+    real:: x,t,vx,vy,y
+    real:: a,m,N
+    real:: dt,p,q
+    integer:: i
+    x = 1.0
+    y = 1.0
+    t = 0.0
+    a = 1
+    m = 1
+    dt = 0.01
+    p = 0
+    q = 1
+    N = (q-p)/dt
+    vx = 1.0
+    vy = 1.0
+
+    !F = 0
+
+    do i=1, N
+        vx = vx + a*dt
+        x  = x + vx*dt
+
+
+        vy = vy + y*dt
+
+        x = x + vx*dt
+        y = y + vy*dt
+
+        print*, vx,vy
+
+
+    end do
+
+
+
+end program
