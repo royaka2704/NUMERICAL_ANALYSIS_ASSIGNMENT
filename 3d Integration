@@ -1,0 +1,39 @@
+program integration
+    implicit none
+    real::x,a,b,h,Q,f,pi,y,P,z
+    real::c,d,hx,hy,hz,e,g
+    integer::i,N,j,k,Nx,Ny,Nz
+
+    pi = 3.1415
+    a = 0.0
+    b = 2*pi
+    c = 0.0
+    d = 4*pi
+    e = 0.0
+    g = 6*pi
+    hx = 0.5
+    hy = 0.5
+    hz = 0.5
+    Nx = (b-a)/hx
+    Ny = (d-c)/hy
+    Nz = (g-e)/hz
+
+    Q = 0.0
+    P = 0.0
+
+    do i=0, Nx
+        do j = 0, Ny
+            do k = 0, Nz
+
+        x = a + i*hx
+        y = c + j*hy
+        z = e + k*hz
+        f = cos(x)*sin(y)*cos(z)
+
+         Q = Q + f*hx*hy*hz
+
+     print*, x, y,z, Q
+     end do
+        end do
+        end do
+end program
